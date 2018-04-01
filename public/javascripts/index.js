@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       myDoughnutChart = new Chart(ctxDonut, {
-        type: 'doughnut',
+        type: 'radar',
         data: {
           labels: lab,
           datasets: [{

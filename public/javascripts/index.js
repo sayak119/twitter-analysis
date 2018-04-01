@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
       $("#menu").empty();
       $("#menu").append('<li>Tweets:</li>');
       res.tweets.map((item, index) => {
-        console.log(item);
         $("#menu").append('<li class="tweet-id">Tweet ID: '+item.id+'</li>');
         $("#menu").append('<li class="tweet-item">'+item.text+'</li>');
       });
@@ -174,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
           datasets: [{
               label: 'Tweet Tones',
               data: dat,
+		console.log(dat);
               backgroundColor: 'rgba(200,0,0,0.2)',
               borderColor: 'rgba(200,0,0,1)',
               borderWidth: 1

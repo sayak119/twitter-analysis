@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let myDoughnutChart = undefined;
     let ctxDonut = document.getElementById("myDoughnutChart").getContext('2d');
-    
+
 
     const getTweetDataFromSearch = () => {
       let result = $('#result-type').val();
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
           tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
         e.currentTarget.className += " active";
-        
+
         $('#loading-spinner').removeClass("disabled-spinner");
     });
 
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
           handleResponese(res);
         }
       });
-    }); 
+    });
 
     const handleResponese = (res) => {
 
@@ -168,19 +168,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       myDoughnutChart = new Chart(ctxDonut, {
         type: 'radar',
-        data: {
-          labels: lab,
-          datasets: [{
-              label: 'Tweet Tones',
-              data: dat,
-		console.log(dat);
-              backgroundColor: 'rgba(200,0,0,0.2)',
-              borderColor: 'rgba(200,0,0,1)',
-              borderWidth: 1
-          }]
-        },
-        options: donutOptions
-      });
+    data: {
+      labels: lab,
+      datasets: [
+        {
+          label: "Tweet Tones",
+          backgroundColor: "rgba(179,181,198,0.2)",
+          borderColor: "rgba(179,181,198,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(179,181,198,1)",
+          data: dat
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Twitter analysis'
+      }
+    }
+});
 
 
 
